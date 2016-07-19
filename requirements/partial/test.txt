@@ -1,3 +1,4 @@
 pytest-django
 flake8
+hacking
 factory_boy
