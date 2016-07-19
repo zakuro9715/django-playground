@@ -1,0 +1,27 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      args:
+        playground_app_env: dev
+    volumes:
+      - .:/usr/local/playground
+    environment:
+      - PLAYGROUNTD_DATABASE_NAME=playground
+      - PLAYGROUNTD_DATABASE_USER=postgres
+      - PLAYGROUNTD_DATABASE_PASSWORD=password
+      - PLAYGROUNTD_DATABASE_HOST=postgres
+      - PLAYGROUNTD_DATABASE_port=5432
+    links:
+      - postgres
+    ports:
+      - 8000:8000
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=playground
+    ports:
+      - "5432:5432"
