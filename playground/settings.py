@@ -81,16 +81,24 @@ WSGI_APPLICATION = 'playground.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('PLAYGROUND_DATABASE_NAME'),
-        'USER': os.getenv('PLAYGROUND_DATABASE_USER'),
-        'PASSWORD': os.getenv('PLAYGROUND_DATABASE_PASSWORD'),
-        'HOST': os.getenv('PLAYGROUND_DATABASE_HOST'),
-        'PORT': os.getenv('PLAYGROUND_DATABASE_PORT'),
+if os.getenv('PLAYGROUND_USE_SQLITE'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.getenv('PLAYGROUND_DATABASE_NAME'),
+            'USER': os.getenv('PLAYGROUND_DATABASE_USER'),
+            'PASSWORD': os.getenv('PLAYGROUND_DATABASE_PASSWORD'),
+            'HOST': os.getenv('PLAYGROUND_DATABASE_HOST'),
+            'PORT': os.getenv('PLAYGROUND_DATABASE_PORT'),
+        }
+    }
 
 
 # Password validation
