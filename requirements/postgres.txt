@@ -1,0 +1,2 @@
+-c partial/constraints.txt
+-r partial/postgres.txt
