@@ -24,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%yi09qv7@h@8@j-!h7$!up*i*nm_(=odt-3sp*08vmxgt-by(='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("PLAYGROUND_APP_ENV", "prod") != "prod"
+APP_ENV = os.getenv('PLAYGROUND_APP_ENV', 'prod')
+DEBUG = APP_ENV == 'dev'
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-if DEBUG:
+if APP_ENV == 'dev':
     INSTALLED_APPS += [
         'debug_toolbar',
         'django_extensions',
