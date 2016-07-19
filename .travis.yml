@@ -1,0 +1,16 @@
+language: python
+python: 3.5
+services:
+  - postgresql
+env:
+  global:
+    - PLAYGROUND_ROOT=$TRAVIS_BUILD_DIR
+    - PLAYGROUND_APP_ENV=test
+  matrix:
+    - PLAYGROUND_USE_SQLITE=yes
+    - >
+      PLAYGROUND_DATABASE_HOST=localhost
+      PLAYGROUND_DATABASE_PORT=5432
+      PLAYGROUND_DATABASE_USER=postgres
+install: bash scripts/playground_pip_install
+script: python manage.py test
