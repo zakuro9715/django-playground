@@ -112,6 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+TEST_RUNNER = 'playground.runners.PytestTestRunner'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
