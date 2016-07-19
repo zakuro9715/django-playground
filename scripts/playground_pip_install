@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+pip install --upgrade pip
+
+pip_args="-r $PLAYGROUND_ROOT/requirements/$PLAYGROUND_APP_ENV.txt"
+if [[ -z "$PLAYGROUND_USE_SQLITE" ]]
+then
+  pip_args="$pip_args -r $PLAYGROUND_ROOT/requirements/postgres.txt"
+fi
+
+pip install $pip_args
