@@ -1,0 +1,3 @@
+-c partial/constraints.txt
+-r partial/base.txt
+-r partial/test.txt
