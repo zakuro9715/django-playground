@@ -15,4 +15,4 @@ env:
 install: bash scripts/playground-pip-install
 script:
   - flake8
-  - python manage.py test
+  - py.test
