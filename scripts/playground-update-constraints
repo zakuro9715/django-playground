@@ -1,0 +1,3 @@
+#!/bin/sh
+
+pip freeze > $PLAYGROUND_ROOT/requirements/partial/constraints.txt
