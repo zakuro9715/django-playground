@@ -12,7 +12,7 @@ env:
       PLAYGROUND_DATABASE_HOST=localhost
       PLAYGROUND_DATABASE_PORT=5432
       PLAYGROUND_DATABASE_USER=postgres
-install: bash scripts/playground_pip_install
+install: bash scripts/playground-pip-install
 script:
   - flake8
   - python manage.py test
