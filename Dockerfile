@@ -9,7 +9,7 @@ ENV PLAYGROUND_APP_ENV ${playground_app_env}
 
 COPY requirements "$PLAYGROUND_ROOT/requirements"
 COPY scripts "$PLAYGROUND_ROOT/scripts"
-RUN bash $PLAYGROUND_ROOT/scripts/playground_pip_install
+RUN bash $PLAYGROUND_ROOT/scripts/playground-pip-install
 
 WORKDIR "$PLAYGROUND_ROOT"
 COPY . "$PLAYGROUND_ROOT"

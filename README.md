@@ -51,6 +51,6 @@ export PLAYGROUND_DATABASE_PORT="5432"
 ```
 
 - Run `direnv allow`
-- Run `playground_pip_install`
+- Run `playground-pip-install`
 - Run `python manage.py migrate`
 - Run `gunicorn -c gunicorn.config.py playground.wsgi` and access http://localhost:8000
