@@ -1,6 +1,10 @@
 # django-playground
 
 [![Build Status](https://travis-ci.org/zakuro9715/django-playground.svg?branch=master)](https://travis-ci.org/zakuro9715/django-playground)
+[![Code Climate](https://codeclimate.com/github/zakuro9715/django-playground/badges/gpa.svg)](https://codeclimate.com/github/zakuro9715/django-playground)
+[![Test Coverage](https://codeclimate.com/github/zakuro9715/django-playground/badges/coverage.svg)](https://codeclimate.com/github/zakuro9715/django-playground/coverage)
+
+
 ## System requirements
 
 - Python 3.5 or later
