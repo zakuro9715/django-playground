@@ -1,4 +1,5 @@
 pytest-django
+pytest-cov
 flake8
 hacking
 flake8-pep257
