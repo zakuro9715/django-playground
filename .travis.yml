@@ -5,6 +5,7 @@ services:
 env:
   global:
     - PLAYGROUND_ROOT=$TRAVIS_BUILD_DIR
+    - PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
     - PLAYGROUND_APP_ENV=test
   matrix:
     - PLAYGROUND_USE_SQLITE=yes
