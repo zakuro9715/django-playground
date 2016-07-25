@@ -9,7 +9,8 @@ build:
   steps:
     - script:
         name: Set envs
-        code: export >
+        code: >
+          export
           PLAYGROUND_ROOT=$WORKER_ROOT
           PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
           PLAYGROUND_APP_ENV=test
@@ -20,7 +21,8 @@ lint:
   steps:
     - script:
         name: Set envs
-        code: export >
+        code: >
+          export
           PLAYGROUND_ROOT=$WORKER_ROOT
           PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
           PLAYGROUND_APP_ENV=test
@@ -34,7 +36,8 @@ tests-sqlite:
   steps:
     - script:
         name: Set envs
-        code: export >
+        code: >
+          export
           PLAYGROUND_ROOT=$WORKER_ROOT
           PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
           PLAYGROUND_APP_ENV=test
@@ -49,7 +52,8 @@ tests-postgres:
   steps:
     - script:
         name: Set envs
-        code: > export
+        code: >
+          export
           PLAYGROUND_ROOT=$WORKER_ROOT
           PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
           PLAYGROUND_APP_ENV=test
