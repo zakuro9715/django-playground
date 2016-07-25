@@ -1,0 +1,23 @@
+machine:
+  python:
+    version: 3.5.1
+  environment:
+    PLAYGROUND_ROOT: $HOME
+    PYTHONPATH: "$PLAYGROUND_ROOT:$PYTHONPATH"
+    PLAYGROUND_APP_ENV: test
+    PLAYGROUND_DATABASE_USER: ubuntu
+    PLAYGROUND_DATABASE_PASSWORD:
+    PLAYGROUND_DATABASE_HOST: localhost
+    PLAYGROUND_DATABASE_PORT: 5432
+dependencies:
+  override:
+    bash scripts/playground-pip-install
+test:
+  override:
+    - flake8
+    - py.test:
+        environment:
+          PLAYGROUND_USE_SQLITE: true
+    - py.test:
+        environment:
+          PLAYGROUND_USE_SQLITE:
