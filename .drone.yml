@@ -1,0 +1,24 @@
+build:
+  image: python:3.5
+  environment:
+    - PLAYGROUND_ROOT=$$DRONE_DIR
+    - PLAYGROUND_APP_ENV=test
+    - PLAYGROUND_DATABASE_USER=postgres
+    - PLAYGROUND_DATABASE_PASSWORD=password
+    - PLAYGROUND_DATABASE_HOST=localhost
+    - PLAYGROUND_DATABASE_PORT=5432
+  commands:
+    - bash scripts/playground-pip-install
+    - flake8
+    - py.test
+matrix:
+  PLAYGRONUD_USE_SQLITE:
+    - true
+    - ""
+compose:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=playground
