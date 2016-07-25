@@ -11,7 +11,7 @@ build:
         name: Set envs
         code: >
           export
-          PLAYGROUND_ROOT=$WORKER_ROOT
+          PLAYGROUND_ROOT=$WERCKER_ROOT
           PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
           PLAYGROUND_APP_ENV=test
     - script:
@@ -23,7 +23,7 @@ lint:
         name: Set envs
         code: >
           export
-          PLAYGROUND_ROOT=$WORKER_ROOT
+          PLAYGROUND_ROOT=$WERCKER_ROOT
           PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
           PLAYGROUND_APP_ENV=test
     - script:
@@ -38,7 +38,7 @@ tests-sqlite:
         name: Set envs
         code: >
           export
-          PLAYGROUND_ROOT=$WORKER_ROOT
+          PLAYGROUND_ROOT=$WERCKER_ROOT
           PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
           PLAYGROUND_APP_ENV=test
           PLAYGROUND_USE_SQLITE=true
@@ -54,7 +54,7 @@ tests-postgres:
         name: Set envs
         code: >
           export
-          PLAYGROUND_ROOT=$WORKER_ROOT
+          PLAYGROUND_ROOT=$WERCKER_ROOT
           PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
           PLAYGROUND_APP_ENV=test
           PLAYGROUND_DATABASE_USER=postgres
