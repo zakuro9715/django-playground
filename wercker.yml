@@ -1,0 +1,65 @@
+box: python:3.5
+services:
+  id: postgres
+  environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_DB=playground
+build:
+  steps:
+    - script:
+        name: Set envs
+        code: export >
+          PLAYGROUND_ROOT=$WORKER_ROOT
+          PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
+          PLAYGROUND_APP_ENV=test
+    - script:
+        name: pip install
+        code: bash scripts/playground-pip-install
+lint:
+  steps:
+    - script:
+        name: Set envs
+        code: export >
+          PLAYGROUND_ROOT=$WORKER_ROOT
+          PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
+          PLAYGROUND_APP_ENV=test
+    - script:
+        name: pip install
+        code: bash scripts/playground-pip-install
+    - script:
+        name: flake8
+        code: flake8
+tests-sqlite:
+  steps:
+    - script:
+        name: Set envs
+        code: export >
+          PLAYGROUND_ROOT=$WORKER_ROOT
+          PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
+          PLAYGROUND_APP_ENV=test
+          PLAYGROUND_USE_SQLITE=true
+    - script:
+        name: pip install
+        code: bash scripts/playground-pip-install
+    - script:
+        name: py.test
+        code: py.test
+tests-postgres:
+  steps:
+    - script:
+        name: Set envs
+        code: > export
+          PLAYGROUND_ROOT=$WORKER_ROOT
+          PYTHONPATH="$PLAYGROUND_ROOT:$PYTHONPATH"
+          PLAYGROUND_APP_ENV=test
+          PLAYGROUND_DATABASE_USER=postgres
+          PLAYGROUND_DATABASE_PASSWORD="$POSTGRES_PASSWORD"
+          PLAYGROUND_DATABASE_HOST="$POSTGRES_PORT_5432_TCP_ADDR"
+          PLAYGROUND_DATABASE_PORT="$POSTGRES_PORT_5432_TCP_PORT"
+    - script:
+        name: pip install
+        code: bash scripts/playground-pip-install
+    - script:
+        name: py.test
+        code: py.test
