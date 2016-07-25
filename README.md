@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/zakuro9715/django-playground.svg?branch=master)](https://travis-ci.org/zakuro9715/django-playground)
 [![Build Status](https://drone.io/github.com/zakuro9715/django-playground/status.png)](https://drone.io/github.com/zakuro9715/django-playground/latest)
 [![wercker status](https://app.wercker.com/status/305aedc150d8cd91961c13e206a2cf56/s/master "wercker status")](https://app.wercker.com/project/bykey/305aedc150d8cd91961c13e206a2cf56)
+[![CircleCI](https://circleci.com/gh/zakuro9715/django-playground.svg?style=svg)](https://circleci.com/gh/zakuro9715/django-playground)
 [![Code Climate](https://codeclimate.com/github/zakuro9715/django-playground/badges/gpa.svg)](https://codeclimate.com/github/zakuro9715/django-playground)
 [![Test Coverage](https://codeclimate.com/github/zakuro9715/django-playground/badges/coverage.svg)](https://codeclimate.com/github/zakuro9715/django-playground/coverage)
 
