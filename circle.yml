@@ -11,7 +11,7 @@ machine:
     PLAYGROUND_DATABASE_PORT: 5432
 dependencies:
   override:
-    bash scripts/playground-pip-install
+    - bash scripts/playground-pip-install
 test:
   override:
     - flake8
